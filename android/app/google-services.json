@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "961012159082",
+    "firebase_url": "https://hello-d2c82.firebaseio.com",
+    "project_id": "hello-d2c82",
+    "storage_bucket": "hello-d2c82.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961012159082:android:929f8cdaa8a1dc8ec7b013",
+        "android_client_info": {
+          "package_name": "com.ballers.petro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961012159082-o09pcp50t75h9or2gej5s9jr67vgu6bo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ballers.petro",
+            "certificate_hash": "7532c6774d1937f493f61cd3a8195e68ff8e7d6e"
+          }
+        },
+        {
+          "client_id": "961012159082-t1fickubju9fonvv591miqu2doqmimef.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbXWNob8Z9P2xVwsv1gBxvpoiTDVwwNNo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961012159082-t1fickubju9fonvv591miqu2doqmimef.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
