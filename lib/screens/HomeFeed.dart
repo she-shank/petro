@@ -2,25 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:petro/ServiceLocator.dart';
 import 'package:petro/datamodel/Post.dart';
 import 'package:petro/services/DatabaseService.dart';
+class HomeFeed extends StatefulWidget {
 
-class HomeFeed extends StatelessWidget {
+  @override
+  _HomeFeedState createState() => _HomeFeedState();
+}
 
-  Post post = Post(authorUID: "qwerfvdbj",
-    title: "rbt",
-  body: "erg",
-  createDT: DateTime.now());
+class _HomeFeedState extends State<HomeFeed> {
 
-//  var db = locator<Databaseservice>();
-//  db.addPost(post);
-
-  Databaseservice db = Databaseservice();
-  db.addPost(post);
-
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('HomeFeed'),
+      body: Column(
+        children: [
+          Text('HomeFeed'),
+          FlatButton(onPressed: () {
+          }, child: Text("lkek"))
+        ],
+      ),
     );
   }
 }
