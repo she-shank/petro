@@ -8,7 +8,7 @@ import 'dart:async';
 import 'package:petro/services/DatabaseService.dart';
 
 class AuthenticationService {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseAuth auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final DatabaseService _db = locator<DatabaseService>();
 
@@ -31,7 +31,7 @@ class AuthenticationService {
   // logged in then populate the _currentUser variable and return a bool value
   // depending on the result
   Future<bool> isUserLoggedIn() async {
-    var user = await _auth.currentUser;
+    var user = await auth.currentUser;
     await _populateCurrentUser(user);
     return user != null;
   }
@@ -41,7 +41,7 @@ class AuthenticationService {
   Future loginWithEmail(
       {@required String email, @required String password}) async {
     try {
-      var authResult = await _auth.signInWithEmailAndPassword(
+      var authResult = await auth.signInWithEmailAndPassword(
           email: email, password: password);
       await _populateCurrentUser(authResult.user);
       return authResult.user != null; //return true if condition is true
@@ -57,19 +57,19 @@ class AuthenticationService {
       @required String password,
       @required String username}) async {
     try {
-      var authResult = await _auth.createUserWithEmailAndPassword(
+      var authResult = await auth.createUserWithEmailAndPassword(
           email: email, password: password);
       await _db.createUser(CustomUser.fromMap({
-        'UID': _auth.currentUser.uid,
-        'profilePhotoURL': null,
+        'UID': auth.currentUser.uid,
+        'profilePhotoURL': "null",
         'username': username,
         'followerCount': 0,
         'followingCount': 0,
       }));
       await _populateCurrentUser(authResult.user);
-      return authResult.user != null;
+      print(authResult.user != null);
     } catch (e) {
-      return e.toString();
+      print(e.toString());
     }
   }
 
@@ -83,7 +83,7 @@ class AuthenticationService {
           idToken: googleSignInAuth.idToken,
           accessToken: googleSignInAuth.accessToken);
 
-      User user = (await _auth.signInWithCredential(authCredential)).user;
+      User user = (await auth.signInWithCredential(authCredential)).user;
       return user;
     } catch (e) {
       print(e);
@@ -92,6 +92,6 @@ class AuthenticationService {
   }
 
   Future<void> signOut() {
-    return _auth.signOut();
+    return auth.signOut();
   }
 }

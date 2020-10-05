@@ -4,7 +4,7 @@ import 'package:petro/screens/Profile.dart';
 import 'package:petro/screens/RecentActivities.dart';
 import 'package:petro/screens/UploadPost.dart';
 
-class Router{
+class Ruter{
 
   static Route<dynamic> generateRoute(RouteSettings settings){
     switch(settings.name){

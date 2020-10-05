@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       initialRoute: '/',
-      onGenerateRoute: Router.generateRoute,
+      onGenerateRoute: Ruter.generateRoute,
     );
   }
 }

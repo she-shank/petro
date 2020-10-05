@@ -21,7 +21,7 @@ class CustomUser {
         followingCount: data['followingCount']);
   }
 
-  Map toMap () {
+  Map<String, dynamic> toMap () {
     return {
       'UID' : userID,
       'profilePhotoURL' : profilePhotoURL,
