@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:petro/screens/HomeFeed.dart';
-import 'package:petro/screens/Profile.dart';
+import 'file:///C:/Users/shesh/FlutterProjects/petro/lib/screens/HomeFeed/HomeFeed.dart';
+import 'file:///C:/Users/shesh/FlutterProjects/petro/lib/screens/Profile/Profile.dart';
 import 'package:petro/screens/RecentActivities.dart';
 import 'package:petro/screens/UploadPost.dart';
 

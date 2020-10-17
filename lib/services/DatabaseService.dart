@@ -64,6 +64,7 @@ class DatabaseService {
     }
   }
 
+
   Future<void> addPost(Post post) {
     try {
       _db.collection('posts').add(post.toMap()).then((docref) {
