@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:petro/screens/Login/LoginView.dart';
+import 'package:petro/screens/Main/MainView.dart';
 import 'file:///C:/Users/shesh/FlutterProjects/petro/lib/screens/HomeFeed/HomeFeed.dart';
 import 'file:///C:/Users/shesh/FlutterProjects/petro/lib/screens/Profile/Profile.dart';
 import 'package:petro/screens/RecentActivities.dart';
+import 'package:petro/screens/Startup/StartupView.dart';
 import 'package:petro/screens/UploadPost.dart';
 
 class Ruter{
@@ -9,6 +12,10 @@ class Ruter{
   static Route<dynamic> generateRoute(RouteSettings settings){
     switch(settings.name){
       case '/':
+        return MaterialPageRoute(builder: (_) => StartupView());
+      case '/mainview':
+        return MaterialPageRoute(builder: (_) => MainView());
+      case '/homefeed':
         return MaterialPageRoute(builder: (_) => HomeFeed());
       case '/recentacivities':
         return MaterialPageRoute(builder: (_) => RecentActivities());
@@ -16,6 +23,8 @@ class Ruter{
         return MaterialPageRoute(builder: (_) => UploadPost());
       case '/profile':
         return MaterialPageRoute(builder: (_) => Profile());
+      case '/login':
+        return MaterialPageRoute(builder: (_) => LoginView());
     }
     return errorRoute();
   }

@@ -11,11 +11,12 @@ class StartupViewModel extends BaseViewModel {
   void handleStartupLogic() async {
     setBusy(true);
     bool result = await _authenticationService.isUserLoggedIn();
-    if(result){
-      _navigationService.navigateTo('/Homefeed');
-    } else {
-      _navigationService.navigateTo('/Login');
-    }
+    await Future.delayed(Duration(seconds: 5));
     setBusy(false);
+    if(result){
+      _navigationService.navigateTo('/mainview');
+    } else {
+      _navigationService.navigateTo('/login');
+    }
   }
 }

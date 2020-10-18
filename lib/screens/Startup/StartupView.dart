@@ -7,7 +7,8 @@ class StartupView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder<StartupViewModel>.nonReactive(
         builder: (context, model, child) => Scaffold(
-          body: Text("Hello EOrld!"),
+          backgroundColor: Colors.blueGrey,
+          body: model.isBusy ? CircularProgressIndicator(backgroundColor: Colors.black,) : Text("Hello EOrld!"),
         ),
         viewModelBuilder: () => StartupViewModel(),
         onModelReady: (model) => model.handleStartupLogic(),
