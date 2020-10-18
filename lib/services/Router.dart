@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:petro/screens/Login/LoginView.dart';
 import 'package:petro/screens/Main/MainView.dart';
-import 'file:///C:/Users/shesh/FlutterProjects/petro/lib/screens/HomeFeed/HomeFeed.dart';
-import 'file:///C:/Users/shesh/FlutterProjects/petro/lib/screens/Profile/Profile.dart';
+import 'package:petro/screens/HomeFeed/HomeFeed.dart';
+import 'package:petro/screens/Profile/Profile.dart';
 import 'package:petro/screens/RecentActivities.dart';
 import 'package:petro/screens/Startup/StartupView.dart';
 import 'package:petro/screens/UploadPost.dart';

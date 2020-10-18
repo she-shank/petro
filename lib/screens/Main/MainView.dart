@@ -12,39 +12,42 @@ class MainView extends StatelessWidget {
     return ViewModelBuilder<MainViewModel>.reactive(
         builder: (context, model, child) {
           return SafeArea(
-              child: Scaffold(
-                body : IndexedStack(
-                  index: model.currentIndex,
-                  children: [
-                    HomeFeed(),
-                    RecentActivities(),
-                    UploadPost(),
-                    Profile(),
-                  ],
-                ),
-                bottomNavigationBar: BottomNavigationBar(
-                  currentIndex: model.currentIndex,
-                  onTap: (index) {
-                    model.NavBarfunction(index);
-                  },
-                  items: [
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.fact_check_outlined, color: Colors.deepOrange,),
-                      label: "HomeFeed"
-                    ),
-                    BottomNavigationBarItem(
-                        icon: Icon(Icons.accessibility_new_outlined, color: Colors.deepOrange,),
-                        label: "Recents"
-                    ),
-                    BottomNavigationBarItem(
-                        icon: Icon(Icons.add_a_photo, color: Colors.deepOrange,),
-                        label: "Upload"
-                    ),
-                    BottomNavigationBarItem(
-                        icon: Icon(Icons.bar_chart, color: Colors.deepOrange,),
-                        label: "Profile"
-                    )
-                  ],
+              child: WillPopScope(
+                onWillPop: () async => false,
+                child: Scaffold(
+                  body : IndexedStack(
+                    index: model.currentIndex,
+                    children: [
+                      HomeFeed(),
+                      RecentActivities(),
+                      UploadPost(),
+                      Profile(),
+                    ],
+                  ),
+                  bottomNavigationBar: BottomNavigationBar(
+                    currentIndex: model.currentIndex,
+                    onTap: (index) {
+                      model.NavBarfunction(index);
+                    },
+                    items: [
+                      BottomNavigationBarItem(
+                        icon: Icon(Icons.fact_check_outlined, color: Colors.deepOrange,),
+                        label: "HomeFeed"
+                      ),
+                      BottomNavigationBarItem(
+                          icon: Icon(Icons.accessibility_new_outlined, color: Colors.deepOrange,),
+                          label: "Recents"
+                      ),
+                      BottomNavigationBarItem(
+                          icon: Icon(Icons.add_a_photo, color: Colors.deepOrange,),
+                          label: "Upload"
+                      ),
+                      BottomNavigationBarItem(
+                          icon: Icon(Icons.bar_chart, color: Colors.deepOrange,),
+                          label: "Profile"
+                      )
+                    ],
+                  ),
                 ),
               )
           );
